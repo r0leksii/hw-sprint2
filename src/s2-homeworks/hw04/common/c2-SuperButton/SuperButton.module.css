@@ -1,0 +1,84 @@
+:root {
+    --color-text: #FFFFFF;
+    --color-text-disabled: #002E5C;
+    --color-text-hover: #FFFFFF;
+    --color-disabled: #004D99;
+    --color-default: #0066CC;
+    --color-default-hover: #004D99;
+    --color-default-active: #002E5C;
+    --color-secondary: #0066CC;
+    --color-secondary-hover: #FFFFFF;
+    --color-secondary-active: #FFFFFF;
+    --color-red: #CC1439;
+    --color-red-hover: #CC1439;
+    --color-red-active: #CC1439;
+    --color-border-default: #0066CC;
+    --color-border-default-hover: #004D99;
+    --color-border-default-active: #002E5C;
+    --color-border-secondary: #0066CC;
+    --color-border-secondary-hover: #004D99;
+    --color-border-secondary-active: #002E5C;
+}
+
+
+.button {
+    padding: 5px 24px;
+    border-radius: 3px;
+    color: var(--color-text);
+    border: 1px solid transparent;
+}
+
+.disabled {
+    background-color: var(--color-disabled);
+    color: var(--color-text-disabled);
+    opacity: 50%;
+}
+
+.secondary {
+    background: none;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border-secondary);
+}
+
+.default {
+    background-color: var(--color-default);
+}
+
+.red {
+    background-color: var(--color-red);
+}
+
+.default:hover {
+    background-color: var(--color-default-hover);
+}
+
+.red:hover {
+    background-color: var(--color-red-hover);
+}
+
+.secondary:hover {
+    background-color: var(--color-secondary-hover);
+    border: 1px solid var(--color-border-secondary-hover);
+}
+
+
+.default:active {
+    background-color: var(--color-default-active);
+    border: 1px solid var(--color-border-default-active);
+}
+
+.secondary:active {
+    background-color: var(--color-secondary-active);
+    border: 1px solid var(--color-border-secondary-active);
+}
+
+.red:active {
+    background-color: var(--color-red-active);
+    border: 1px solid var(--color-border-default-active);
+}
+
+.button:disabled {
+    background-color: var(--color-disabled);
+    color: var(--color-text-disabled);
+    opacity: 50%;
+}

@@ -1,0 +1,32 @@
+.burgerMenuIcon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 2px 0 rgba(29, 33, 38, 0.10), 0 0 40px 0 rgba(29, 33, 38, 0.13);
+    z-index: 9000;
+    background-color: #ffffff;
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: 70px;
+    height: 60px;
+
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
