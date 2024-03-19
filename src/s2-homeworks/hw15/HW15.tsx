@@ -48,45 +48,68 @@ const HW15 = () => {
     const [techs, setTechs] = useState<TechType[]>([])
 
     const sendQuery = (params: any) => {
+
         setLoading(true)
         getTechs(params)
             .then((res) => {
                 // делает студент
 
                 // сохранить пришедшие данные
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
 
+
+                }
+                // сохранить параметры поиска
+                localStorage.setItem('hw15-search-params', JSON.stringify(params))
+
+                setLoading(false)
                 //
             })
+
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({page: newPage, count: newCount})
+        setSearchParams((params) => {
+                const newParams = new URLSearchParams(params)
+                newParams.set('page', newPage.toString())
+                newParams.set('count', newCount.toString())
+                return newParams
+            }
+        )
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
 
         //
+
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
+        setSort(newSort)
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
-
-        // sendQuery(
-        // setSearchParams(
-
+        setPage(1) // при сортировке сбрасывать на 1 страницу
+        sendQuery({sort: newSort, page: 1, count: count})
+        setSearchParams((params) => {
+                const newParams = new URLSearchParams(params)
+                newParams.set('sort', newSort)
+                newParams.set('page', '1') // Reset to first page on sort change
+                return newParams
+            }
+        )
         //
+
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
+        // debugger
         setCount(+params.count || 4)
     }, [])
 
