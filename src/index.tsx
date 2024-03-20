@@ -11,13 +11,14 @@ import {HashRouter} from 'react-router-dom'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
-        {/*для дз 10*/}
-        <Provider store={store}>
-            <HashRouter>
+        <HashRouter>
+            {/*для дз 10*/}
+            <Provider store={store}>
 
                 <App/>
-            </HashRouter>
-        </Provider>
+
+            </Provider>
+        </HashRouter>
     </React.StrictMode>
 )
 

@@ -74,7 +74,7 @@ const HW15 = () => {
         // делает студент
         setPage(newPage)
         setCount(newCount)
-        sendQuery({page: newPage, count: newCount})
+        sendQuery({sort: sort, page: newPage, count: newCount})
         setSearchParams((params) => {
                 const newParams = new URLSearchParams(params)
                 newParams.set('page', newPage.toString())

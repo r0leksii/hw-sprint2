@@ -48,27 +48,27 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                 показать
             </span>
 
-            {/*<SuperSelect*/}
-            {/*    id={id + '-pagination-select'}*/}
-            {/*    value={itemsCountForPage}*/}
-            {/*    options={[*/}
-            {/*        {id: 4, value: 4},*/}
-            {/*        {id: 7, value: 7},*/}
-            {/*        {id: 10, value: 10}*/}
-            {/*    ]}*/}
-            {/*    onChange={onChangeSelect}*/}
-            {/*/>*/}
-
-            <Select
+            <SuperSelect
                 id={id + '-pagination-select'}
                 value={itemsCountForPage}
+                options={[
+                    {id: 4, value: 4},
+                    {id: 7, value: 7},
+                    {id: 10, value: 10}
+                ]}
                 onChange={onChangeSelect}
-                displayEmpty // Add this if you want to show an empty option when no value is selected
-            >
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={7}>7</MenuItem>
-                <MenuItem value={10}>10</MenuItem>
-            </Select>
+            />
+
+            {/*<Select*/}
+            {/*    id={id + '-pagination-select'}*/}
+            {/*    value={itemsCountForPage}*/}
+            {/*    onChange={onChangeSelect}*/}
+            {/*    displayEmpty // Add this if you want to show an empty option when no value is selected*/}
+            {/*>*/}
+            {/*    <MenuItem value={4}>4</MenuItem>*/}
+            {/*    <MenuItem value={7}>7</MenuItem>*/}
+            {/*    <MenuItem value={10}>10</MenuItem>*/}
+            {/*</Select>*/}
 
             <span className={s.text2}>
                 строк в таблице
