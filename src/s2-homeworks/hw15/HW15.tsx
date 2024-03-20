@@ -72,19 +72,17 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
+        console.log(newPage)
+        console.log(newCount)
         setPage(newPage)
         setCount(newCount)
-        sendQuery({sort: sort, page: newPage, count: newCount})
-        setSearchParams((params) => {
-                const newParams = new URLSearchParams(params)
-                newParams.set('page', newPage.toString())
-                newParams.set('count', newCount.toString())
-                return newParams
-            }
-        )
+        const pageQuery: { page?: string } = newPage !== 1 ? {page: newPage + ''} : {}
+        const countQuery: { count?: string } = newCount !== 1 ? {count: newCount + ''} : {}
+        const {count, page, ...lastQueries} = Object.fromEntries(searchParams)
+        const allQuery = {...lastQueries, ...pageQuery, ...countQuery}
+        sendQuery(allQuery)
+        setSearchParams(allQuery)
 
-
-        //
 
     }
 
